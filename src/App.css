@@ -1,4 +1,8 @@
 .App {
   text-align: center;
 }
+.App{
+  height: 100%;
+  background-image: url('/images/image11.jpg')
+}
 
