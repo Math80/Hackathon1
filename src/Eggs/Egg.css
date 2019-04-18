@@ -1,0 +1,7 @@
+.Egg {
+  position: absolute;
+}
+
+.Egg.affiche-off {
+  display: none;
+}
