@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-import "./Credit.css"
+import "./Credit.css";
+
 
 
 class Credit extends Component{
