@@ -76,11 +76,11 @@ setTimeout(this.GenerateRandomNumber3, 600);
                     <div>{ 
                     (credit === 0)? 
                     ( <div className ="game"> 
-                <h2>GAME OVER </h2>
-                <button onClick={this.playMore}>PLAY AGAIN</button>
+                <h2 className="gameOverTitle">GAME OVER </h2>
+                <button className="playAgainButton" onClick={this.playMore}>PLAY AGAIN</button>
                 </div>):(
                 <div>
-                <h2 className="creditTile">Credits: {credit}</h2>  
+                <h2 className="creditTitle">Credits: {credit}</h2>  
 
                 </div>)}
                 <div>
@@ -88,7 +88,7 @@ setTimeout(this.GenerateRandomNumber3, 600);
                 <img src={this.state.image2} alt="plop" />
                 <img src={this.state.image3} alt="plop" />
                 </div>
-                <div>
+                <div className="pushButton">
                 <button onClick={this.GenerateRandomNumber}>PLAY</button>
                 </div>
                 {this.state.NumberHolder1===this.state.NumberHolder2 && 

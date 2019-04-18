@@ -1,16 +1,33 @@
-.creditTile{
+.creditTitle{
     font-size: 3em;
     color: white;
+    margin-top: 0px;
+    padding-top: 20px;
+}
+
+.pushButton{
+    padding: 50px;
 }
 
 .win{
     font-size: 8em;
     color: rgb(255, 184, 52);
+    margin-top: 10px;
 }
 
 .loose{
     font-size: 4em;
     color: white;
+    margin-top: 10px;
+    margin-bottom: 100px;
+}
+
+.gameOverTitle{
+    margin-top: 0px;
+}
+
+.playAgainButton{
+    margin-bottom: 50px;
 }
 
 .Spinner button{
