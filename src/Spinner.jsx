@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import "./Spinner.css";
+
 const images = [
     "images/image1.png",
     "images/image2.png",
     "images/image3.png",
     "images/image4.png",
     "images/image5.png",
-    
+
 ]
 
 class Spinner extends Component {
@@ -52,7 +54,7 @@ class Spinner extends Component {
         }  
     }
 
-    playMore = () => {
+        playMore = () => {
         this.setState({credit: 10})
     }
 
@@ -61,30 +63,24 @@ class Spinner extends Component {
     GenerateRandomNumber = () => {
         this.GenerateRandomNumber1();
         setTimeout(this.GenerateRandomNumber2, 300);
-        setTimeout(this.GenerateRandomNumber3, 600);
-        this.getLess();
-        
-        
-
-
-
-
+setTimeout(this.GenerateRandomNumber3, 600);
+        this.getLess();           
     }
-    
+                
       
 
     render() {
         const credit = this.state.credit;
         return (
-        <div className='Spinner'>
-            <div>{
-                (credit === 0)?
-                ( <div className="game"> 
+        <div className='Spinner'>  
+                    <div>{ 
+                    (credit === 0)? 
+                    ( <div className ="game"> 
                 <h2>GAME OVER </h2>
-                <button onClick={this.playMore}>Play Again</button>
+                <button onClick={this.playMore}>PLAY AGAIN</button>
                 </div>):(
                 <div>
-                <h2>Credits: {credit}</h2>  
+                <h2 className="creditTile">Credits: {credit}</h2>  
 
                 </div>)}
                 <div>
@@ -92,13 +88,13 @@ class Spinner extends Component {
                 <img src={this.state.image2} alt="plop" />
                 <img src={this.state.image3} alt="plop" />
                 </div>
-                
-                <button onClick={this.GenerateRandomNumber}>Play</button>
-                
+                <div>
+                <button onClick={this.GenerateRandomNumber}>PLAY</button>
+                </div>
                 {this.state.NumberHolder1===this.state.NumberHolder2 && 
                 this.state.NumberHolder1===this.state.NumberHolder3 && 
                 this.state.NumberHolder2 === this.state.NumberHolder3? 
-                <h2>You win</h2>: <h2>You lose</h2>
+                <h2 className="win">You win !!!</h2>: <h2 className="loose">You lose</h2>
                 }
             </div>
         </div>

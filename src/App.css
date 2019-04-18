@@ -10,13 +10,22 @@
   100% {color: yellow;}
 }
 
-
-
-
 .game h2{
   font-size: 6em;
   animation-name: example;
   animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes back {
+  0%   {background-color: rgb(91, 91, 255);}
+  100% {background-color: rgb(95, 206, 95);}
+}
+
+.App{
+  animation-name: back;
+  animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
