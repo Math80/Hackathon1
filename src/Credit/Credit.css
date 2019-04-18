@@ -1,0 +1,23 @@
+@keyframes example {
+    0%   {color: red;}
+    25%  {color: orange;}
+    50%  {color: yellow;}
+    100% {color: pink;}
+  }
+
+
+.game h2{
+    font-size: 6em;
+    /* color: red; */
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+/* .Credit h2{
+    font-size: 2em; 
+
+} */
+
+
+  

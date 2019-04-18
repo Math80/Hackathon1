@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import "./Credit.css"
 
 
 class Credit extends Component{
@@ -13,14 +14,11 @@ class Credit extends Component{
         const credit = this.state.credit;
         if (credit >= 1) {
             this.setState({credit: credit - 1})
-        }
+        }  
+    }
 
-            // this.state.credit === 0 ? {"GAME OVER"} : {this.state.credit}
-            //  /* if (this.state.credit <= 0) {
-            //     alert("GAME OVER!!!")   
-            //     this.setState({credit:10}) */
-            // }
-            
+    playMore = () => {
+        this.setState({credit: 10})
     }
 
     render(){
@@ -29,7 +27,13 @@ class Credit extends Component{
             <div className="Credit">
                 {
                     (credit === 0)
-                    ? (<div>Game Over</div>)
+                    ? (
+                    <div className="game"> 
+                        <h2>GAME OVER </h2>
+                        <button onClick={this.playMore}>Play Again</button>
+                    </div>
+                       )
+
                     : (
                         <div> 
                             <h2>Credits: {credit}</h2>
