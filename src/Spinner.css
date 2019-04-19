@@ -1,0 +1,11 @@
+@media screen and (max-width: 480px){
+    .Spinner .pict {
+      width: 50%;
+      height: 50%;
+    }
+  } 
+  .Spinner button{
+      width: 150px;
+      height: 30px;
+      background-color: green;
+  }

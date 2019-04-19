@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './Spinner.css';
+
 const images = [
     "images/image1.png",
     "images/image2.png",
@@ -16,7 +18,7 @@ class Spinner extends Component {
             image2: "images/image2.png",
             image3: "images/image3.png",
             NumberHolder1: 0,
-            NumberHolder2: 0,
+            NumberHolder2: 1,
             NumberHolder3: 0,
             credit: 10
         }
@@ -87,15 +89,15 @@ class Spinner extends Component {
                 <h2>Credits: {credit}</h2>  
 
                 </div>)}
-                <div>
-                <img src={this.state.image1} alt="plop" />
-                <img src={this.state.image2} alt="plop" />
-                <img src={this.state.image3} alt="plop" />
+                <div >
+                <img className='pict' src={this.state.image1} alt="plop" />
+                <img className='pict' src={this.state.image2} alt="plop" />
+                <img className='pict' src={this.state.image3} alt="plop" />
                 </div>
                 
                 <button onClick={this.GenerateRandomNumber}>Play</button>
                 
-                {this.state.NumberHolder1===this.state.NumberHolder2 && 
+                {this.state.NumberHolder1===this.state.NumberHolder2  && 
                 this.state.NumberHolder1===this.state.NumberHolder3 && 
                 this.state.NumberHolder2 === this.state.NumberHolder3? 
                 <h2>You win</h2>: <h2>You lose</h2>
