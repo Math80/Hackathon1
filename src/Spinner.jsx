@@ -39,9 +39,9 @@ class Spinner extends Component {
             image1: "images/image1.png",
             image2: "images/image2.png",
             image3: "images/image3.png",
-            NumberHolder1: 0,
-            NumberHolder2: 1,
-            NumberHolder3: 0,
+            NumberHolder1: -1,
+	            NumberHolder2: -2,
+	            NumberHolder3: -3,
             credit: 10
         }
 
@@ -91,10 +91,33 @@ setTimeout(this.GenerateRandomNumber3, 600);
         this.getLess();           
     }
                 
-      
+    win = () => {
+	
+	
+        this.setState({credit: this.state.credit === 10})
+    }
 
     render() {
         const credit = this.state.credit;
+        let displayResult;
+        if (this.state.NumberHolder1 === -1) {
+            displayResult = <h2> </h2>
+        } else if (
+            this.state.NumberHolder1 === this.state.NumberHolder2 &&
+            this.state.NumberHolder1 === this.state.NumberHolder3 &&
+            this.state.NumberHolder2 === this.state.NumberHolder3) {
+                displayResult = <h2 className="win">You win !</h2>
+         } else if (
+            this.state.NumberHolder1 !== this.state.NumberHolder2 ||
+            this.state.NumberHolder1 !== this.state.NumberHolder3 ||
+            this.state.NumberHolder2 !== this.state.NumberHolder3){
+             displayResult = <h2 className="loose">You lose</h2>
+         }
+         let displayBtn;
+         credit <= 0 ? displayBtn = <p></p> : displayBtn = 
+         
+                <button className="pushButton" onClick={this.GenerateRandomNumber}>PLAY</button>
+                
         return (
 
             
@@ -106,14 +129,12 @@ setTimeout(this.GenerateRandomNumber3, 600);
                 }
                 <EasterEgg egg={goldenEgg} />
                 </div>
-
-
-
                 <div>{
                     (credit === 0) ?
                     ( <div className ="game"> 
                     <h2 className="gameOverTitle">GAME OVER </h2>
                     <button className="playAgainButton" onClick={this.playMore}>PLAY AGAIN</button>
+                    <audio  autoPlay src='/sons/mario.mp3'></audio>
                     </div>) : (
                 <div>
                 <h2 className="creditTitle">Credits: {credit}</h2>  
@@ -125,15 +146,10 @@ setTimeout(this.GenerateRandomNumber3, 600);
                         <img className='pict' src={this.state.image3} alt="plop" />
                     </div>
 
-                    <div className="pushButton">
-                <button onClick={this.GenerateRandomNumber}>PLAY</button>
-                </div>
+                    
 
-                    {this.state.NumberHolder1 === this.state.NumberHolder2 &&
-                        this.state.NumberHolder1 === this.state.NumberHolder3 &&
-                        this.state.NumberHolder2 === this.state.NumberHolder3 ?
-                        <h2 className="win">You win !!!</h2>: <h2 className="loose">You lose</h2>
-                    }
+                {displayBtn}
+                    {displayResult}
                 </div>
             </div>
         );
