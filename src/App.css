@@ -1,10 +1,7 @@
 .App {
   text-align: center;
 }
-.App{
-  height: 100%;
-  -background-image: url('/images/image11.jpg')
-}
+
 @keyframes example {
   0%   {color: red;}
   100% {color: yellow;}
@@ -16,6 +13,12 @@
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+@media screen and (max-width 480px){
+  .Spinner .pict img{
+    width: 50%;
+    height: 50%;
+  }
 }
 
 @keyframes back {

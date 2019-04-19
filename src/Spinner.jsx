@@ -1,14 +1,36 @@
 import React, { Component } from 'react';
-import "./Spinner.css";
+
+import Egg from './Eggs/Egg';
+import EasterEgg from './Eggs/EasterEgg';
+import './Eggs/Eggs.css';
+
+import './Spinner.css';
 
 const images = [
     "images/image1.png",
     "images/image2.png",
     "images/image3.png",
     "images/image4.png",
-    "images/image5.png",
-
+    "images/image5.png"
 ]
+const eggsRandom = Array.from({ length: 20 }).map(egg => {
+    return {
+        minShow: Math.floor(Math.random() * (5000 - 1)) + 1,
+        maxShow: Math.floor(Math.random() * (120000 - 20000)) + 35000,
+        minHide: Math.floor(Math.random() * (1000 - 750)) + 750,
+        maxHide: Math.floor(Math.random() * (1750 - 1500)) + 1500,
+        coordX: Math.floor(Math.random() * (90 - 10)) + 10,
+        coordY: Math.floor(Math.random() * (40 - 10)) + 10,
+        img: `images/egg${Math.floor(Math.random() * (9 - 1)) + 1}.png`
+    }
+})
+
+const goldenEgg = {
+    coordX: 0,
+    coordY: 0,
+    img: "images/goldenEgg.png"
+}
+
 
 class Spinner extends Component {
     constructor(props) {
@@ -18,7 +40,7 @@ class Spinner extends Component {
             image2: "images/image2.png",
             image3: "images/image3.png",
             NumberHolder1: 0,
-            NumberHolder2: 0,
+            NumberHolder2: 1,
             NumberHolder3: 0,
             credit: 10
         }
@@ -50,15 +72,17 @@ class Spinner extends Component {
     getLess = () => {
         const credit = this.state.credit;
         if (credit >= 1) {
-            this.setState({credit: credit - 1})
-        }  
+            this.setState({ credit: credit - 1 })
+        }
     }
 
-        playMore = () => {
-        this.setState({credit: 10})
+    playMore = () => {
+        this.setState({ credit: 10 })
     }
 
-
+    moreCredit = () => {
+        this.setState({credit: this.state.credit + 1})
+    }
 
     GenerateRandomNumber = () => {
         this.GenerateRandomNumber1();
@@ -72,32 +96,46 @@ setTimeout(this.GenerateRandomNumber3, 600);
     render() {
         const credit = this.state.credit;
         return (
-        <div className='Spinner'>  
-                    <div>{ 
-                    (credit === 0)? 
+
+            
+
+            <div className='Spinner'>
+                <div className="Eggs">
+                {
+                    eggsRandom.map((egg, index) => <Egg moreCredit={this.moreCredit} key={index} egg={egg} id={index + 1} />)
+                }
+                <EasterEgg egg={goldenEgg} />
+                </div>
+
+
+
+                <div>{
+                    (credit === 0) ?
                     ( <div className ="game"> 
-                <h2 className="gameOverTitle">GAME OVER </h2>
-                <button className="playAgainButton" onClick={this.playMore}>PLAY AGAIN</button>
-                </div>):(
+                    <h2 className="gameOverTitle">GAME OVER </h2>
+                    <button className="playAgainButton" onClick={this.playMore}>PLAY AGAIN</button>
+                    </div>) : (
                 <div>
                 <h2 className="creditTitle">Credits: {credit}</h2>  
 
                 </div>)}
-                <div>
-                <img src={this.state.image1} alt="plop" />
-                <img src={this.state.image2} alt="plop" />
-                <img src={this.state.image3} alt="plop" />
-                </div>
-                <div className="pushButton">
+                    <div >
+                        <img className='pict' src={this.state.image1} alt="plop" />
+                        <img className='pict' src={this.state.image2} alt="plop" />
+                        <img className='pict' src={this.state.image3} alt="plop" />
+                    </div>
+
+                    <div className="pushButton">
                 <button onClick={this.GenerateRandomNumber}>PLAY</button>
                 </div>
-                {this.state.NumberHolder1===this.state.NumberHolder2 && 
-                this.state.NumberHolder1===this.state.NumberHolder3 && 
-                this.state.NumberHolder2 === this.state.NumberHolder3? 
-                <h2 className="win">You win !!!</h2>: <h2 className="loose">You lose</h2>
-                }
+
+                    {this.state.NumberHolder1 === this.state.NumberHolder2 &&
+                        this.state.NumberHolder1 === this.state.NumberHolder3 &&
+                        this.state.NumberHolder2 === this.state.NumberHolder3 ?
+                        <h2 className="win">You win !!!</h2>: <h2 className="loose">You lose</h2>
+                    }
+                </div>
             </div>
-        </div>
         );
     }
 }
