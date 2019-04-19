@@ -16,12 +16,12 @@ class App extends Component {
       <div className="App">
        
      
-       <audio src="sons/son.mp3"  preload autoPlay loop ></audio>
+       
 
         
          <Spinner />
-      
-        
+         <audio src="sons/son.mp3"  preload autoPlay loop ></audio>
+         
 
       </div>
     );
