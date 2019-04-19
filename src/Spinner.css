@@ -1,11 +1,70 @@
+.creditTitle{
+    font-size: 3em;
+    color: white;
+    margin-top: 0px;
+    padding-top: 20px;
+}
+
+.pushButton{
+    padding: 50px;
+}
+
+.win{
+    font-size: 8em;
+    color: rgb(255, 184, 52);
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+}
+
+.loose{
+    font-size: 4em;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding-bottom: 100px;
+}
+
+.gameOverTitle{
+    margin-top: 0px;
+}
+
+.playAgainButton{
+    margin-bottom: 50px;
+}
+
+.Spinner button{
+    border-radius: 10px;
+    background-color: lime;
+    font-size: 24px;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 9px #999;
+}
+
+.Spinner button:hover {background-color: orange}
+
+.Spinner button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 @media screen and (max-width: 480px){
     .Spinner .pict {
       width: 50%;
       height: 50%;
     }
   } 
-  .Spinner button{
-      width: 150px;
-      height: 30px;
-      background-color: green;
-  }
+
+
+
+  

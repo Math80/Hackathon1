@@ -19,7 +19,9 @@ class EasterEgg extends Component {
     return (
       <div className="EasterEgg">
         <div className={`easter-egg ${this.state.displayDiv ? "affiche-on" : "affiche-off"}`}>
-          {/* Image Easter Egg a placer */}
+          <div >
+            <img className="easterImage" src="images/easterEgg.png" alt="easterEgg"/>
+          </div>
         </div>
         <div>
           <a className={`golden-egg ${this.state.display ? "affiche-on" : "affiche-off"}`}
