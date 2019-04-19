@@ -38,22 +38,19 @@ class Egg extends Component {
     this.setState({
       clicked: !this.state.clicked,
       display: false,
-      
     })
-    ;
+    this.props.moreCredit();
   }
 
   render() {
     return (
-      <div>
-        <a 
+        <div 
           className={`Egg ${this.props.id} ${this.state.display ? "affiche-on" : "affiche-off"}`}
           onClick={this.onClickPiece}
-          style={{left: this.props.egg.coordX, top: this.props.egg.coordY}}
+          style={{left: `${this.props.egg.coordX}vw`, top: `${this.props.egg.coordY}vw`}}
         >
-          <img src={this.props.egg.img} alt=""/>
-        </a>
-      </div>
+          <img src={this.props.egg.img} alt="" style={{width:"6vw"}} />
+        </div>
     )
   }
 }

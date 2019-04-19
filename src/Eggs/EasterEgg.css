@@ -1,0 +1,26 @@
+.EasterEgg .golden-egg {
+  position: absolute;
+}
+
+
+
+.EasterEgg .easter-egg {
+  background-color: #00001B;
+  position: absolute;
+  top:0;
+  width: 100vw;
+  height: 100vw;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.EasterEgg .row {
+  flex-direction: row;
+}
+.EasterEgg .affiche-off {
+  display: none;
+}
+.EasterEgg .golden-egg {
+  opacity: 0.05;
+}
