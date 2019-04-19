@@ -7,6 +7,7 @@ class Egg extends Component {
     this.state = {
       display: false,
       clicked: false,
+      
     }
     this.displayMs = Math.floor(Math.random() * (props.egg.maxShow - props.egg.minShow)) + props.egg.minShow;
     this.hideMs = Math.floor(Math.random() * (props.egg.maxHide - props.egg.minHide)) + props.egg.minHide;
@@ -37,7 +38,9 @@ class Egg extends Component {
     this.setState({
       clicked: !this.state.clicked,
       display: false,
-    });
+      
+    })
+    ;
   }
 
   render() {
