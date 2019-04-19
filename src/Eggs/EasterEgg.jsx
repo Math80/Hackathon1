@@ -22,7 +22,7 @@ class EasterEgg extends Component {
           {/* Image Easter Egg a placer */}
         </div>
         <div>
-          <a className={`golden-egg ${this.state.display ? "affiche-on" : "affiche-off"}`}
+          <a href="#" className={`golden-egg ${this.state.display ? "affiche-on" : "affiche-off"}`}
             onClick={this.onClickPiece}
             style={{ left: `${this.props.egg.coordX}vw`, top: `${this.props.egg.coordY}vw` }}
 

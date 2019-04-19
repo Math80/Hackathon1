@@ -120,6 +120,7 @@ class Spinner extends Component {
                         (<div className="game">
                             <h2>GAME OVER </h2>
                             <button onClick={this.playMore}>Play Again</button>
+                            <audio  autoPlay src='/sons/mario.mp3'></audio>
                         </div>) : (
                             <div>
                                 <h2>Credits: {credit}</h2>
