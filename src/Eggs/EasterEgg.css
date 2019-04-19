@@ -9,10 +9,12 @@
   position: absolute;
   top:0;
   width: 100vw;
-  height: 100vw;
+  height: 102vh;
   color: white;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .EasterEgg .row {
@@ -24,3 +26,31 @@
 .EasterEgg .golden-egg {
   opacity: 0.05;
 }
+
+.EasterEgg .easterImage{
+  width: 600px;
+  animation: rotate infinite 10s linear;
+  
+}
+
+@keyframes rotate {
+  from{
+    transform: rotate(360deg);
+  }
+  to{
+    transform: rotate(0deg)
+  }
+}
+
+@keyframes couleur {
+  0%   {background-color: red;}
+  100% {background-color: yellow;}
+}
+
+.EasterEgg .easter-egg{
+  font-size: 6em;
+  animation-name: couleur;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;}
+

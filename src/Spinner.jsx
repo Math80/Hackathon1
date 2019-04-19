@@ -39,9 +39,9 @@ class Spinner extends Component {
             image1: "images/image1.png",
             image2: "images/image2.png",
             image3: "images/image3.png",
-            NumberHolder1: 0,
-            NumberHolder2: 1,
-            NumberHolder3: 0,
+            NumberHolder1: -1,
+            NumberHolder2: -2,
+            NumberHolder3: -3,
             credit: 10
         }
 
@@ -96,11 +96,29 @@ class Spinner extends Component {
 
 
     }
+    win = () => {
 
-
+        this.setState({credit: this.state.credit === 10})
+    }
 
     render() {
         const credit = this.state.credit;
+        let displayResult;
+        if (this.state.NumberHolder1 === -1) {
+            displayResult = <h2> </h2>
+        } else if (
+            this.state.NumberHolder1 === this.state.NumberHolder2 &&
+            this.state.NumberHolder1 === this.state.NumberHolder3 &&
+            this.state.NumberHolder2 === this.state.NumberHolder3) {
+                displayResult = <h2>You win !</h2>
+         } else if (
+            this.state.NumberHolder1 !== this.state.NumberHolder2 ||
+            this.state.NumberHolder1 !== this.state.NumberHolder3 ||
+            this.state.NumberHolder2 !== this.state.NumberHolder3){
+             displayResult = <h2>You lose</h2>
+         }
+         let displayBtn;
+         credit <= 0 ? displayBtn = <p></p> : displayBtn = <button onClick={this.GenerateRandomNumber}>Play</button>
         return (
 
             
@@ -132,13 +150,8 @@ class Spinner extends Component {
                         <img className='pict' src={this.state.image3} alt="plop" />
                     </div>
 
-                    <button onClick={this.GenerateRandomNumber}>Play</button>
-
-                    {this.state.NumberHolder1 === this.state.NumberHolder2 &&
-                        this.state.NumberHolder1 === this.state.NumberHolder3 &&
-                        this.state.NumberHolder2 === this.state.NumberHolder3 ?
-                        <h2>You win</h2> : <h2>You lose</h2>
-                    }
+                    {displayBtn}
+                    {displayResult}
                 </div>
             </div>
         );
