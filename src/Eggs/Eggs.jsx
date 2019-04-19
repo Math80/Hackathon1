@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Egg from './Egg';
-import GoldenEgg from './GoldenEgg';
+import EasterEgg from './EasterEgg';
 import './Eggs.css';
 
 
@@ -40,10 +40,11 @@ class Eggs extends Component{
   render() {
     return(
       <div className="Eggs"> 
+      <EasterEgg egg={goldenEgg}/>
         {
           eggsRandom.map((egg, index) => <Egg key={index} egg={egg} id={index + 1} />)
         }
-        <GoldenEgg egg={goldenEgg}/>
+        
       </div>
     )
   }
