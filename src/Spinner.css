@@ -13,13 +13,16 @@
     font-size: 8em;
     color: rgb(255, 184, 52);
     margin-top: 10px;
+    margin-bottom: 0;
+    padding-bottom: 20px;
 }
 
 .loose{
     font-size: 4em;
     color: white;
     margin-top: 10px;
-    margin-bottom: 100px;
+    margin-bottom: 0px;
+    padding-bottom: 100px;
 }
 
 .gameOverTitle{
@@ -61,4 +64,7 @@
       height: 50%;
     }
   } 
+
+
+
   
