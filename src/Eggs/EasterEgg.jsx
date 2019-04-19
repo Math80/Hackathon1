@@ -14,6 +14,7 @@ class EasterEgg extends Component {
       display: false,
       displayDiv: true,
     });
+    
   }
   render() {
     return (
@@ -21,6 +22,7 @@ class EasterEgg extends Component {
         <div className={`easter-egg ${this.state.displayDiv ? "affiche-on" : "affiche-off"}`}>
           <div >
             <img className="easterImage" src="images/easterEgg.png" alt="easterEgg"/>
+            {this.state.displayDiv ? <audio src='./sons/cloches.mp3' autoPlay preload></audio>: ""}
           </div>
         </div>
         <div>
