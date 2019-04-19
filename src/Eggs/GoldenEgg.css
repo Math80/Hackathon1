@@ -1,0 +1,7 @@
+.GoldenEgg {
+  position: absolute;
+}
+
+.GoldenEgg.affiche-off {
+  display: none;
+}
